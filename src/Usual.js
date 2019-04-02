@@ -1,15 +1,25 @@
-import React, {Component} from 'react';
-import SimpleHoc from './SimpleHoc';
+import React, { Component } from 'react';
+import hijackRenderHoc from './components/hijackRenderHoc';
+import GlobalHoc from './GlobalHoc';
 
-@SimpleHoc
+@GlobalHoc
+@hijackRenderHoc({ type: 'add-style', style: { color: 'red' } })
 class Usual extends Component {
-    render() {
+    constructor() {
+        super();
+        this.state = {
+            usual: 'usual',
+        };
+    }
+
+    componentDidMount() {
+        console.log('didMount');
         console.log(this.props, 'props');
-        return (
-            <div>
-                Usual
-            </div>
-        );
+    }
+
+    render() {
+    
+        return <div>Usual</div>;
     }
 }
 
