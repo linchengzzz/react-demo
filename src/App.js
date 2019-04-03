@@ -7,6 +7,7 @@ import GlobalHoc from './GlobalHoc';
 class App extends Component {
   componentDidMount() {
     const {$_axios} = this.props;
+    console.log('测试 git cz');
     console.log($_axios());
   }
   render() {
