@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 const GlobalHoc = WrappedComponent => class extends Component {
     axios() {
-        console.log(11111)
+        console.log(11111);
     }
     render() {
         return (
